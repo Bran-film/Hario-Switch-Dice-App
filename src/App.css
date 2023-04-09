@@ -58,18 +58,18 @@ body {
   color: #111;
 }
 
-.rolling .dice-inner {
+/* .rolling .dice-inner {
   animation: spin 3s linear;
-}
+} */
 
-@keyframes spin {
+/* @keyframes spin {
   from {
     transform: rotateX(0deg) rotateY(0deg);
   }
   to {
     transform: rotateX(2160deg) rotateY(1440deg);
   }
-}
+} */
 
 .roll-button.disabled {
   cursor: not-allowed;
@@ -84,7 +84,7 @@ body {
 }
 
 .roll-button.blur {
-  filter: blur(0.5px);
+  filter: blur(1px);
 }
 
 .dice {
@@ -95,14 +95,14 @@ body {
   transition: 1s ease;
 }
 
+.dice.rolling {
+  animation: rolling 4s;
+}
+
 @keyframes rolling {
   50% {
     transform: rotateX(455deg) rotateY(455deg);
   }
-}
-
-.dice.rolling {
-  animation: rolling 4s;
 }
 
 .face {

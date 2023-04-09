@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Dice = ({ roll, setRoll, diceOptions }) => {
+const Dice = ({ diceOptions, onRegister }) => {
   const [result, setResult] = useState(null);
   const [spinning, setSpinning] = useState(false);
+  const [roll, setRoll] = useState(false);
 
-  const randomOffsetX = useRef(Math.floor(Math.random() * 10) + 1);
-  const randomOffsetY = useRef(Math.floor(Math.random() * 10) + 1);
+  const randomOffsetX = useRef(Math.floor(Math.random() * 5) + 1);
+  const randomOffsetY = useRef(Math.floor(Math.random() * 5) + 1);
+
+  useEffect(() => {
+    onRegister(() => setRoll(true));
+  }, [onRegister]);
 
   useEffect(() => {
     let timer;
@@ -23,7 +28,7 @@ const Dice = ({ roll, setRoll, diceOptions }) => {
       }, 4050);
     }
     return () => clearTimeout(timer);
-  }, [roll, setRoll, diceOptions]);
+  }, [roll, diceOptions]);
 
   return (
     <div className="dice-container">

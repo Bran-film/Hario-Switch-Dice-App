@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import "./App.css";
 import Dice from "./components/Dice";
 import RollButton from "./components/RollButton.js";
@@ -47,10 +47,14 @@ const diceOptions = [
 ];
 
 function App() {
-  const [roll, setRoll] = useState(false);
+  const [rollCallbacks, setRollCallbacks] = useState([]);
+
+  const registerRollCallback = useCallback((callback) => {
+    setRollCallbacks((prev) => [...prev, callback]);
+  }, []);
 
   const handleRoll = () => {
-    setRoll(true);
+    rollCallbacks.forEach((callback) => callback());
   };
 
   return (
@@ -59,13 +63,12 @@ function App() {
         {diceOptions.map((options, index) => (
           <Dice
             key={index}
-            roll={roll}
-            setRoll={setRoll}
             diceOptions={options}
+            onRegister={registerRollCallback}
           />
         ))}
       </div>
-      <RollButton onRoll={handleRoll} disabled={roll} rolling={roll} />
+      <RollButton onRoll={handleRoll} />
     </div>
   );
 }
