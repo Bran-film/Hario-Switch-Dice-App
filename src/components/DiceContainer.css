@@ -1,0 +1,17 @@
+.dice-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .dice-container {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+}

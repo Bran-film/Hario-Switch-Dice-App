@@ -1,0 +1,80 @@
+/* Dice Styles */
+.dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #dddbd8, #fff);
+}
+
+.face::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #f6f3f0;
+  transform: translateZ(-1px);
+}
+
+.face::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  /* border-radius: 2px; */
+  /* background: #131210; */
+}
+
+.option-1 {
+  transform: rotateY(0deg) translateZ(50px);
+}
+
+.option-2 {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.option-3 {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.option-4 {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.option-5 {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.option-6 {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.current-option {
+  transform: translateZ(50px);
+}
+
+.rolling .dice {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
