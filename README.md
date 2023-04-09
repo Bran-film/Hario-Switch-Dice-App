@@ -1,11 +1,23 @@
 Hario Switch Dice App
 A fun and interactive web app that helps you decide which coffee brewing method to use with the Hario Switch. The app features five 3D dice, each representing a different brewing variable: coffee to water, grind size and brew time, Switch Method, Stir or no, and Water temp. When you click the "Roll" button, the dices spin and randomly land on one of the variables to form your daily recipe.
 
+![Hario Switch Dice App Screenshot](./screenshot.png)
+
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Getting Started](#getting)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## screenshot
 
 ## Demo
 
-Try the live demo here: [Coffee Dice](https://bran-film.github.io/Hario-Switch-Dice-App/)
+Try the live demo here: [Hario Switch Dice](https://bran-film.github.io/Hario-Switch-Dice-App/)
 
 ## Features
 
@@ -38,8 +50,10 @@ npm
    npm start
 5. Open your browser and visit http://localhost:3000 to see the app in action.
 
-Contributing
+## Contributing
+
 We welcome contributions! Please read the contributing guidelines to get started.
 
-License
+## License
+
 This project is released under the MIT License.
