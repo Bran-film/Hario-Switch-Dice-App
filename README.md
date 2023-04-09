@@ -1,4 +1,5 @@
-Hario Switch Dice App
+# Hario Switch Dice App
+
 A fun and interactive web app that helps you decide which coffee brewing method to use with the Hario Switch. The app features five 3D dice, each representing a different brewing variable: coffee to water, grind size and brew time, Switch Method, Stir or no, and Water temp. When you click the "Roll" button, the dices spin and randomly land on one of the variables to form your daily recipe.
 
 ![Hario Switch Dice App Screenshot](./screenshot.png)
